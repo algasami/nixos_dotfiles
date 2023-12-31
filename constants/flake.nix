@@ -7,6 +7,7 @@
     allSystemAttrs = {
       x64_system = "x86_64-linux";
     };
+    defaultSystem = allSystemAttrs.x64_system;
     allSystems = builtins.attrValues allSystemAttrs;
   };
 }

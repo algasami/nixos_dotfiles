@@ -10,6 +10,8 @@
     };
     mysecrets = { url = "git+ssh://git@github.com/algasami/nixos-secrets?ref=main&shallow=1"; flake = false; };
     constants = { url = "path:/etc/nixos/constants"; flake = true; };
+
+    btop_gpu_nix = { url = "github:algasami/btop_gpu_nix?ref=main&shallow=1"; };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, constants,  ... }: let
@@ -23,6 +25,7 @@ in {
         ./theme_global.nix
         ./fonts_global.nix
         ./audio_global.nix
+        ./cuda.nix
 
         ./secrets/default.nix
 

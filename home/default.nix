@@ -1,8 +1,9 @@
-{ config, pkgs, constants, ...}:
+{ config, pkgs, constants, btop_gpu_nix, ...}:
 {
   
   imports = [
     (import ./hyprland {inherit config pkgs constants;})
+    (import ./btop_gpu.nix {inherit config pkgs constants btop_gpu_nix;})
     (import ./programs {inherit config pkgs constants;})
   ];
   nixpkgs.config.allowUnfree = true;
