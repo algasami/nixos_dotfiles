@@ -101,6 +101,7 @@
     description = "algasami";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+    hashedPasswordFile = config.age.secrets."ssh-default".path;
   };
 
   # Allow unfree packages

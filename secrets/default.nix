@@ -8,7 +8,7 @@
 
 
   age.identityPaths = [ 
-    "/persist/home/${constants.username}/.ssh/id_ed25519"
+    "/home/${constants.username}/.ssh/id_ed25519"
   ];
 
   age.secrets = {
@@ -20,11 +20,4 @@
     };
   };
 
-  environment.etc = {
-    "agenix/ssh-default" = {
-      source = config.age.secrets."ssh-default".path;
-      mode = "0600";
-      user = constants.username;
-    };
-  };
 }
