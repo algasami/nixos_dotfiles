@@ -22,6 +22,7 @@ in {
       modules = [
         # we are all separate modules!
         ./configuration.nix
+        ./shells.nix
         ./theme_global.nix
         ./fonts_global.nix
         ./audio_global.nix
