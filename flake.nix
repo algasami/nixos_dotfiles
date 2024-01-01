@@ -9,9 +9,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mysecrets = { url = "git+ssh://git@github.com/algasami/nixos-secrets?ref=main&shallow=1"; flake = false; };
-    constants = { url = "path:/etc/nixos/constants"; flake = true; };
+    constants = { url = "path:./constants"; flake = true; };
 
     btop_gpu_nix = { url = "github:algasami/btop_gpu_nix?ref=main&shallow=1"; };
+    eww_wayland_nix = { url = "github:algasami/eww-wayland-nix?ref=main&shallow=1"; };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, constants,  ... }: let
@@ -27,6 +28,7 @@ in {
         ./fonts_global.nix
         ./audio_global.nix
         ./cuda.nix
+        ./steam.nix
 
         ./secrets/default.nix
 
