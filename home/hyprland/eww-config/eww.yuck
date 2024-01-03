@@ -55,7 +55,7 @@
   "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
 
 (defpoll volume :interval "1s"
-  "scripts/getvol")
+  "amixer get Master | awk -F '[^0-9]+' '/Left:/{print $3}'")
 
 (defpoll time :interval "10s"
   "date '+%H:%M %m %d, %Y'")
