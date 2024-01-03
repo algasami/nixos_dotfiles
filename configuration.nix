@@ -6,9 +6,10 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
+
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -39,8 +40,7 @@
     powerManagement.finegrained = false;
 
     # use the nvidia open-source driver or not
-    # pro tip: use it!
-    open = true;
+    open = false;
 
     # enable the nvidia settings menu
     # call me via nvidia-settings

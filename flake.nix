@@ -11,10 +11,9 @@
     constants = { url = "path:./constants"; flake = true; };
 
     btop_gpu_nix = { url = "github:algasami/btop_gpu_nix?ref=main&shallow=1"; };
-    eww_wayland_nix = { url = "github:algasami/eww-wayland-nix?ref=main&shallow=1"; };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, constants, agenix, ... }: let
+  outputs = inputs@{ self, nixpkgs, home-manager, constants, ... }: let
 in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = constants.allSystemAttrs.x64_system;
@@ -28,8 +27,7 @@ in {
         ./audio_global.nix
         ./cuda.nix
         ./steam.nix
-
-        ./secrets/default.nix
+        ./overlays.nix
 
         home-manager.nixosModules.home-manager
 

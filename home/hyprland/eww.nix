@@ -1,6 +1,8 @@
-{ config, pkgs, eww_wayland_nix, constants, ... }:
+{ config, pkgs, constants, ... }:
 {
-  home.packages = [
-    eww_wayland_nix.packages."${constants.defaultSystem}".default
-  ];
+
+  programs.eww = {
+    enable = true;
+    configDir = ./eww-config;
+  };
 }

@@ -1,9 +1,10 @@
-{ config, pkgs, constants, eww_wayland_nix, ...}:
+{ config, pkgs, constants, ...}:
 {
   imports = [
-    (import ./eww.nix {inherit config pkgs constants eww_wayland_nix;})
+    (import ./eww.nix {inherit config pkgs constants;})
   ];
   wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland.enableNvidiaPatches = true;
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     monitor="DP-3,3440x1440@144,0x0,1";
@@ -88,6 +89,10 @@
       "$mod, l, movefocus, r"
       "$mod, k, movefocus, u"
       "$mod, j, movefocus, d"
+    ];
+    bindm = [
+      "bindm=SUPER,mouse:272,movewindow"
+      "bindm=SUPER,mouse:273,resizewindow"
     ];
     workspace = [
       "1,default:true,on-created-empty:kitty"
