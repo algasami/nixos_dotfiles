@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
-    agenix.url = "github:ryantm/agenix/564595d0ad4be7277e07fa63b5a991b3c645655d";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -15,7 +14,7 @@
     eww_wayland_nix = { url = "github:algasami/eww-wayland-nix?ref=main&shallow=1"; };
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, constants,  ... }: let
+  outputs = inputs@{ self, nixpkgs, home-manager, constants, agenix, ... }: let
 in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       system = constants.allSystemAttrs.x64_system;

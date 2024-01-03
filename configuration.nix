@@ -101,7 +101,6 @@
     description = "algasami";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
-    hashedPasswordFile = config.age.secrets."ssh-default".path;
   };
 
   # Allow unfree packages
@@ -140,7 +139,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   networking.firewall.allowedTCPPorts = [];
   networking.firewall.allowedUDPPorts = [];

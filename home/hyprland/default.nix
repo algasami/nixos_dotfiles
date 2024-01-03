@@ -10,17 +10,17 @@
     decoration = {
       blur = {
         enabled = "true";
-        size = "2";
+        size = "12";
         passes = "3";
-        ignore_opacity = "true";
+        ignore_opacity = "false";
       };
       drop_shadow = "true";
       shadow_range = "8";
       rounding = "8";
       active_opacity = "1.0";
-      inactive_opacity = "0.6";
+      inactive_opacity = "0.75";
       dim_inactive = "true";
-      dim_strength = "0.5";
+      dim_strength = "0.2";
     };
     windowrulev2 = [
       "float, workspace:3"
@@ -38,6 +38,10 @@
       "$mod, F, exec, togglefloating"
       "$mod, F10, exec, fullscreen, 1"
       "$mod, F11, exec, fullscreen, 0"
+
+      # nuphy
+      ",code:122, exec, amixer set Master 5%-" # volume down
+      ",code:123, exec, amixer set Master 5%+" # volume up
 
       # workspaces
       "$mod CTRL, 1, movetoworkspacesilent, 1"
@@ -69,6 +73,7 @@
       "$mod, 7, workspace, 7"
       "$mod, 8, workspace, 8"
       "$mod, 9, workspace, 9"
+
     ];
     binde = [ # repeat
       "$mod SHIFT, H, movewindow, l"
