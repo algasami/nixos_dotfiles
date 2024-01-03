@@ -14,5 +14,6 @@
     pulseaudio # this is for enabling compatibility layer for pipewire
     # pulse audio will never be used as a service (avoid conflicts)
     alsa-utils
+    playerctl
   ];
 }

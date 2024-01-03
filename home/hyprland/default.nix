@@ -36,9 +36,9 @@
       "$mod, V, exec, cliphist list | wofi --show dmenu | cliphist decode | wl-copy"
       "$mod, K, killactive" # use K for kill
       "$mod, C, centerwindow, 1" # respect reserved area
-      "$mod, F, exec, togglefloating"
-      "$mod, F10, exec, fullscreen, 1"
-      "$mod, F11, exec, fullscreen, 0"
+      "$mod, F, togglefloating"
+      "$mod, F10, fullscreen, 1"
+      "$mod, F11, fullscreen, 0"
 
       # nuphy
       ",code:122, exec, amixer set Master 5%-" # volume down
@@ -102,6 +102,7 @@
     exec-once = [
       "copyq --start-server"
       "wl-paste --type text --watch cliphist store"
+      "eww open bar"
     ];
     input = {
       repeat_delay = "300";

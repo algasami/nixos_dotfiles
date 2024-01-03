@@ -1,13 +1,72 @@
-(defwindow example
-  :monitor 0
-  :geometry (geometry :x "0%"
-                      :y "20px"
-                      :width "90%"
-                      :height "30px"
-                      :anchor "top center")
-  :stacking "fg"
-  :reserve (struts :distance "40px" :side "top")
-  :windowtype "dock"
-  :wm-ignore false
-  "example content")
+(defwidget bar []
+  (centerbox :orientation "h"
+    (workspaces)
+    (music)
+    (sidestuff)))
 
+(defwidget sidestuff []
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+    (metric :label " "
+            :value volume
+            :onchange "amixer set Master {}%")
+    (metric :label " "
+            :value {EWW_RAM.used_mem_perc}
+            :onchange "")
+    (metric :label "󰨣 "
+            :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
+            :onchange "")
+    time))
+
+(defwidget workspaces []
+  (box :class "workspaces"
+       :orientation "h"
+       :space-evenly true
+       :halign "start"
+       :spacing 10
+    (button :onclick "hyprctl dispatch workspace 1" 1)
+    (button :onclick "hyprctl dispatch workspace 2" 2)
+    (button :onclick "hyprctl dispatch workspace 3" 3)
+    (button :onclick "hyprctl dispatch workspace 4" 4)
+    (button :onclick "hyprctl dispatch workspace 5" 5)
+    (button :onclick "hyprctl dispatch workspace 6" 6)
+    (button :onclick "hyprctl dispatch workspace 7" 7)
+    (button :onclick "hyprctl dispatch workspace 8" 8)
+    (button :onclick "hyprctl dispatch workspace 9" 9)))
+
+(defwidget music []
+  (box :class "music"
+       :orientation "h"
+       :space-evenly false
+       :halign "center"
+    {music != "" ? "󰎌 ${music}" : ""}))
+
+(defwidget metric [label value onchange]
+  (box :orientation "h"
+       :class "metric"
+       :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+           :max 101
+           :active {onchange != ""}
+           :value value
+           :onchange onchange)))
+
+(deflisten music :initial ""
+  "playerctl --follow metadata --format '{{ artist }} - {{ title }}' || true")
+
+(defpoll volume :interval "1s"
+  "scripts/getvol")
+
+(defpoll time :interval "10s"
+  "date '+%H:%M %m %d, %Y'")
+
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :exclusive true
+  :geometry (geometry :x "0%"
+                      :y "0%"
+                      :width "100%"
+                      :height "35px"
+                      :anchor "bottom center")
+  (bar))

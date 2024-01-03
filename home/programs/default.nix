@@ -9,5 +9,6 @@
     (import ./gtk.nix {inherit config pkgs;})
     (import ./audio.nix {inherit config pkgs;})
     (import ./eye-protection.nix {inherit config pkgs;})
+    (import ./playerctld.nix {inherit config pkgs;})
   ];
 }
