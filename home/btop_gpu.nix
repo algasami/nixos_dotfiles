@@ -1,13 +1,10 @@
-{ config, pkgs , btop_gpu_nix, constants, ... }:
+{ config, pkgs, constants, ... }:
 {
   programs.btop = {
-    enable = false;
+    enable = true;
     settings = { # need home-manager to automatically inject these
       color_theme = "Tokyo Storm";
       theme_background = false;
     };
   };
-  home.packages = [
-    btop_gpu_nix.packages.${constants.defaultSystem}.default
-  ];
 }

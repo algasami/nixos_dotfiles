@@ -113,6 +113,7 @@
     kitty
     home-manager
     wl-clipboard
+    gwe # nvidia
   ];
   programs.neovim = {
     enable = true;

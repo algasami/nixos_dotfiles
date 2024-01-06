@@ -2,21 +2,20 @@
   description = "NixOS Flake config for algasami@nixos";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-23.11";
+    unstable_nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     mysecrets = { url = "git+ssh://git@github.com/algasami/nixos-secrets?ref=main&shallow=1"; flake = false; };
     constants = { url = "path:./constants"; flake = true; };
-
-    btop_gpu_nix = { url = "github:algasami/btop_gpu_nix?ref=main&shallow=1"; };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, constants, ... }: let
 in {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      system = constants.allSystemAttrs.x64_system;
+      system = constants.defaultSystem;
       specialArgs = inputs;
       modules = [
         # we are all separate modules!
@@ -26,7 +25,7 @@ in {
         ./fonts_global.nix
         ./audio_global.nix
         ./cuda.nix
-        ./steam.nix
+        ./game.nix
         ./overlays.nix
 
         home-manager.nixosModules.home-manager

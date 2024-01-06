@@ -37,8 +37,7 @@
       "$mod, K, killactive" # use K for kill
       "$mod, C, centerwindow, 1" # respect reserved area
       "$mod, F, togglefloating"
-      "$mod, F10, fullscreen, 1"
-      "$mod, F11, fullscreen, 0"
+      "$mod, code:121, fullscreen" #f10
 
       # nuphy
       ",code:122, exec, amixer set Master 5%-" # volume down
@@ -109,6 +108,9 @@
       repeat_rate = "75";
       follow_mouse = "1";
       mouse_refocus = "false"; # steam pop-ups
+    };
+    misc = {
+      no_direct_scanout = "true";
     };
   };
   wayland.windowManager.hyprland.plugins = [];
