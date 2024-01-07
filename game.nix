@@ -38,6 +38,7 @@ in {
 
   
   environment.systemPackages = [
+    pkgs.mangohud
     unstable_pkgs.vinegar
     pkgs.wineWowPackages.stable
   ];

@@ -27,6 +27,7 @@
       "float, workspace:3"
       "noblur, workspace:3"
       "nodim, workspace:3"
+      "immediate, workspace:3"
       "opacity 1.0 override 1.0 override, workspace:3"
     ];
     bind = [
@@ -114,7 +115,14 @@
     };
     misc = {
       no_direct_scanout = "true";
+      # vrr = "1";
     };
+    general = {
+      allow_tearing = "true";
+    };
+    env = [
+      "WLR_DRM_NO_ATOMIC,1"
+    ];
   };
   wayland.windowManager.hyprland.plugins = [];
   home.packages = with pkgs; [
