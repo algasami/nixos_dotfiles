@@ -1,8 +1,9 @@
-{ config, pkgs, constants, btop_gpu_nix, eww_wayland_nix, ...}:
+{ config, pkgs, constants, mysecrets, btop_gpu_nix, eww_wayland_nix, ...}:
 {
   
   imports = [
-    (import ./hyprland {inherit config pkgs constants eww_wayland_nix;})
+    (import ./hyprland {inherit mysecrets config pkgs constants eww_wayland_nix;})
+    (import ./fonts.nix {inherit config pkgs;})
     (import ./btop_gpu.nix {inherit config pkgs constants btop_gpu_nix;})
     (import ./programs {inherit config pkgs constants;})
   ];

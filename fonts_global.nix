@@ -2,7 +2,24 @@
 { pkgs, ... }:
 {
   fonts.packages = with pkgs; [
+    source-code-pro
+    dejavu_fonts
+    noto-fonts
+    noto-fonts-extra
     (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })
   ];
   fonts.fontconfig.antialias = true;
+  fonts.fontconfig.defaultFonts = {
+    monospace = [
+      "DejaVu Sans Mono"
+    ];
+    sansSerif = [
+      "Noto Sans"
+      "DejaVu Sans"
+    ];
+    serif = [
+      "Noto Serif"
+      "DejaVu Serif"
+    ];
+  };
 }

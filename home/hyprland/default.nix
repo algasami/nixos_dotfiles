@@ -1,4 +1,4 @@
-{ config, pkgs, constants, ...}:
+{ config, pkgs, constants, mysecrets, ...}:
 {
   imports = [
     (import ./eww.nix {inherit config pkgs constants;})
@@ -102,6 +102,10 @@
       "copyq --start-server"
       "wl-paste --type text --watch cliphist store"
       "eww open bar"
+      "swww init"
+    ];
+    exec = [
+      "swww img ${mysecrets}/wallpapers/market.gif"
     ];
     input = {
       repeat_delay = "300";
@@ -114,5 +118,8 @@
     };
   };
   wayland.windowManager.hyprland.plugins = [];
+  home.packages = with pkgs; [
+    swww # wallpaper
+  ];
 }
 
