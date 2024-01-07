@@ -47,7 +47,7 @@
     nvidiaSettings = true;
 
     # select the appropriate driver
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
 
   };
 

@@ -33,6 +33,8 @@ in {
       };
     };
   };
+  programs.gamemode.enable = true;
+  # game optimization
 
   
   environment.systemPackages = [
