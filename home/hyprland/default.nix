@@ -102,10 +102,9 @@
       "copyq --start-server"
       "wl-paste --type text --watch cliphist store"
       "eww open bar"
-      "swww init"
+      "swww init && swww img ${mysecrets}/wallpapers/market.gif"
     ];
     exec = [
-      "swww img ${mysecrets}/wallpapers/market.gif"
     ];
     input = {
       repeat_delay = "300";
