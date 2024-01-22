@@ -27,4 +27,6 @@
   services.cliphist.enable = true;
   programs.xplr.enable = true;
   programs.firefox.enable = true;
+
+  services.gnome-keyring.enable = true;
 }
