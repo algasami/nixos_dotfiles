@@ -41,8 +41,8 @@
       "$mod, code:121, fullscreen" #f10
 
       # nuphy
-      ",code:122, exec, amixer set Master 5%-" # volume down
-      ",code:123, exec, amixer set Master 5%+" # volume up
+      ",code:122, exec, amixer -c1 set Master 5%-" # volume down
+      ",code:123, exec, amixer -c1 set Master 5%+" # volume up
 
       # workspaces
       "$mod CTRL, 1, movetoworkspacesilent, 1"

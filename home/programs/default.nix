@@ -12,4 +12,5 @@
     (import ./playerctld.nix {inherit config pkgs;})
   ];
   programs.vscode.enable = true;
+  programs.obs-studio.enable = true;
 }
