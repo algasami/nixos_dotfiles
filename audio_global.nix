@@ -15,5 +15,7 @@
     # pulse audio will never be used as a service (avoid conflicts)
     alsa-utils
     playerctl
+    mpv-unwrapped
+    smplayer # mkv and audio
   ];
 }
