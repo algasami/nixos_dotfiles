@@ -13,6 +13,8 @@
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  time.hardwareClockInLocalTime = true; # fix dualboot
+
   # OpenGL
   hardware.opengl = {
     enable = true;
