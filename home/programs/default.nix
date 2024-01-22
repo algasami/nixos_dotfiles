@@ -11,4 +11,5 @@
     (import ./eye-protection.nix {inherit config pkgs;})
     (import ./playerctld.nix {inherit config pkgs;})
   ];
+  programs.vscode.enable = true;
 }
