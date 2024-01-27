@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
-    unstable_nixpkgs.url = "nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -21,10 +20,10 @@ in {
         # we are all separate modules!
         ./configuration.nix
         ./shells.nix
+        ./portal.nix
         ./theme_global.nix
         ./fonts_global.nix
         ./audio_global.nix
-        ./game.nix
         ./overlays.nix
 
         home-manager.nixosModules.home-manager
