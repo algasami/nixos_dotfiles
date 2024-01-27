@@ -24,7 +24,6 @@ in {
         ./theme_global.nix
         ./fonts_global.nix
         ./audio_global.nix
-        ./cuda.nix
         ./game.nix
         ./overlays.nix
 
