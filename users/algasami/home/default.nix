@@ -4,6 +4,7 @@
   imports = [
     (import ./hyprland {inherit mysecrets config pkgs constants eww_wayland_nix;})
     (import ./fonts.nix {inherit config pkgs;})
+    (import ./security.nix {inherit config pkgs;})
     (import ./btop_gpu.nix {inherit config pkgs constants btop_gpu_nix;})
     (import ./programs {inherit config pkgs constants;})
   ];
@@ -13,6 +14,15 @@
   home.homeDirectory = "/home/${constants.username}";
 
   home.stateVersion = "23.11";
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    GIT_EDITOR = "nvim";
+    VISUAL = "nvim";
+    DIFFPROG = "nvim -d";
+    MANPAGER = "nvim +Man!";
+    MANWIDTH = 999;
+  };
 
   programs.home-manager.enable = true;
   programs.wofi = {

@@ -7,7 +7,13 @@
 {
   imports =
   [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ./hardware-configuration-homepc.nix
+
+    ./shells.nix
+    ./portal.nix
+    ./theme_global.nix
+    ./fonts_global.nix
+    ./audio_global.nix
   ];
 
   
@@ -96,14 +102,6 @@
   # Configure keymap in X11
   services.xserver.layout = "us";
   services.xserver.xkbVariant = "";
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.algasami = {
-    isNormalUser = true;
-    description = "algasami";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
