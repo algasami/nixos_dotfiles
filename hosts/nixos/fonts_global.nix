@@ -5,6 +5,8 @@
     source-code-pro
     dejavu_fonts
     noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
     noto-fonts-extra
     (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })
   ];
@@ -15,17 +17,12 @@
       "DejaVu Sans Mono"
     ];
     sansSerif = [
-      "Noto Sans"
+      "Noto Sans CJK TC"
       "DejaVu Sans"
     ];
     serif = [
-      "Noto Serif"
+      "Noto Serif CJK TC"
       "DejaVu Serif"
     ];
   };
-  i18n.inputMethod.enabled = "fcitx5";
-  i18n.inputMethod.fcitx5.addons = with pkgs; [
-    fcitx5-chewing
-    fcitx5-gtk
-  ];
 }

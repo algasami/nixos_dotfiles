@@ -40,9 +40,12 @@
       "$mod, F, togglefloating"
       "$mod, code:121, fullscreen" #f10
 
-      # nuphy
-      ",code:122, exec, amixer -c1 set Master 5%-" # volume down
-      ",code:123, exec, amixer -c1 set Master 5%+" # volume up
+      # nuphy field 75
+      ",code:122, exec, amixer set Master 5%-" # volume down
+      ",code:123, exec, amixer set Master 5%+" # volume up
+
+      # screenshot
+      ",Print, exec, grimblast --notify copy area"
 
       # workspaces
       "$mod CTRL, 1, movetoworkspacesilent, 1"
@@ -104,6 +107,7 @@
       "wl-paste --type text --watch cliphist store"
       "eww open bar"
       "swww init && swww img ${mysecrets}/wallpapers/market.gif"
+      "mako" # notification daemon
     ];
     exec = [
     ];
@@ -122,11 +126,14 @@
     };
     env = [
       "WLR_DRM_NO_ATOMIC,1"
+      "QT_QPA_PLATFORM,wayland"
+      "XDG_CURRENT_DESKTOP,sway"
     ];
   };
   wayland.windowManager.hyprland.plugins = [];
   home.packages = with pkgs; [
     swww # wallpaper
+    grim # grab image (needed for flameshot)
   ];
 }
 
