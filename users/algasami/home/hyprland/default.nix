@@ -106,10 +106,10 @@
       "copyq --start-server"
       "wl-paste --type text --watch cliphist store"
       "eww open bar"
-      "swww init && swww img ${mysecrets}/wallpapers/market.gif"
       "mako" # notification daemon
     ];
     exec = [
+      "swww init && swww img ${mysecrets}/wallpapers/market.gif"
     ];
     input = {
       repeat_delay = "300";

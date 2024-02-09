@@ -13,16 +13,17 @@
       wo = vim.wo
       bo = vim.bo
 
+      bo.tabstop = 2;
+      bo.shiftwidth = 2;
+      bo.expandtab = true;
+      bo.softtabstop = 2;
+      bo.autoindent = true;
+
       o.showcmd = true
       g.mapleader = ","
 
       wo.number = true
       wo.relativenumber = true;
-
-      bo.tabstop = 2;
-      bo.shiftwidth = 2;
-      bo.expandtab = true;
-      bo.softtabstop = 2;
 
       vim.keymap.set("n", "<Leader>t", "<cmd>Neotree toggle<cr>")
     '';
