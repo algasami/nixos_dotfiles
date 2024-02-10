@@ -100,7 +100,7 @@
     workspace = [
       "1,default:true,on-created-empty:kitty"
       "2,on-created-empty:[float] firefox"
-      "3,decorate:false,on-created-empty:[float] steam"
+      "3,decorate:false,on-created-empty:easyeffect"
     ];
     exec-once = [
       "sleep 5 && swww init & sleep 0.1 && swww img ${mysecrets}/wallpapers/market.gif"
