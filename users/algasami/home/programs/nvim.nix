@@ -13,6 +13,9 @@
       wo = vim.wo
       bo = vim.bo
 
+      vim.opt.termguicolors = true
+      vim.cmd.colorscheme 'melange'
+
       bo.tabstop = 2;
       bo.shiftwidth = 2;
       bo.expandtab = true;
@@ -70,6 +73,7 @@
       nui-nvim # img preview
       plenary-nvim # library
       neo-tree-nvim # tree
+      melange-nvim # theme
     ];
   };
 }
