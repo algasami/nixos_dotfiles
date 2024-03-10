@@ -27,7 +27,7 @@
     [ { device = "/dev/disk/by-uuid/69845d1d-0f90-4072-88a1-f7edb7022383"; }
     ];
 
-  fileSystems."/expansion" = {
+  fileSystems."/home/algasami/games" = {
     device = "/dev/nvme1n1";
     fsType = "ext4";
   };
