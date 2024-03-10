@@ -14,10 +14,11 @@
 
       vim.opt.tabstop = 2;
       vim.opt.shiftwidth = 2;
+      vim.opt.colorcolumn = "100";
 
-      vim.o.expandtab = true;
-      vim.o.softtabstop = 2;
-      vim.o.autoindent = true;
+      vim.opt.expandtab = true;
+      vim.opt.softtabstop = 2;
+      vim.opt.autoindent = true;
 
       vim.o.showcmd = true
       vim.g.mapleader = ","
