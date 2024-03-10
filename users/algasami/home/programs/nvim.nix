@@ -8,25 +8,22 @@
     viAlias = true;
     vimAlias = true;
     extraLuaConfig = ''
-      o = vim.o
-      g = vim.g
-      wo = vim.wo
-      bo = vim.bo
 
       vim.opt.termguicolors = true
       vim.cmd.colorscheme 'melange'
 
-      bo.tabstop = 2;
-      bo.shiftwidth = 2;
-      bo.expandtab = true;
-      bo.softtabstop = 2;
-      bo.autoindent = true;
+      vim.opt.tabstop = 2;
+      vim.opt.shiftwidth = 2;
 
-      o.showcmd = true
-      g.mapleader = ","
+      vim.o.expandtab = true;
+      vim.o.softtabstop = 2;
+      vim.o.autoindent = true;
 
-      wo.number = true
-      wo.relativenumber = true;
+      vim.o.showcmd = true
+      vim.g.mapleader = ","
+
+      vim.o.number = true
+      vim.o.relativenumber = true;
 
       vim.keymap.set("n", "<Leader>t", "<cmd>Neotree toggle<cr>")
 
