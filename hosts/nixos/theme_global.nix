@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
-  environment.variables.GTK_THEME = "Catppuccin-Macchiato-Standard-Teal-Dark";
-  environment.variables.XCURSOR_THEME = "Catppuccin-Macchiato-Teal";
+  environment.variables.GTK_THEME = "Catppuccin-Latte-Standard-Pink-Dark";
+  environment.variables.XCURSOR_THEME = "Catppuccin-Latte-Pink";
   environment.variables.XCURSOR_SIZE = "24";
   console = {
     earlySetup = true;
@@ -26,11 +26,11 @@
   };
 
   nixpkgs.config.packageOverrides = pkgs: {
-    colloid-icon-theme = pkgs.colloid-icon-theme.override { colorVariants = ["teal"]; };
+    colloid-icon-theme = pkgs.colloid-icon-theme.override { colorVariants = ["pink"]; };
     catppuccin-gtk = pkgs.catppuccin-gtk.override {
-      accents = [ "teal" ]; # You can specify multiple accents here to output multiple themes 
+      accents = [ "pink" ]; # You can specify multiple accents here to output multiple themes 
       size = "standard";
-      variant = "macchiato";
+      variant = "latte";
     };
     # discord = pkgs.discord.override {
     #   withOpenASAR = true;
@@ -43,7 +43,7 @@
     colloid-icon-theme
     catppuccin-gtk
     catppuccin-kvantum
-    catppuccin-cursors.macchiatoTeal
+    catppuccin-cursors.lattePink
 
     gnome.gnome-tweaks
     gnome.gnome-shell

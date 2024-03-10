@@ -30,7 +30,7 @@
     enable = true;
     style = ''
       * {
-        font-family: Iosevka Nerd Font;
+        font-family: Mononoki Nerd Font;
         font-size: 18px;
       }
     '';

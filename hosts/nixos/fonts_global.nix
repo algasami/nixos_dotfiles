@@ -8,13 +8,13 @@
     noto-fonts-cjk-sans
     noto-fonts-cjk-serif
     noto-fonts-extra
-    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "Mononoki" ]; })
   ];
   fonts.fontconfig.antialias = true;
   fonts.fontconfig.defaultFonts = {
     monospace = [
+      "Mononoki Nerd Font"
       "Iosevka Nerd Font"
-      "DejaVu Sans Mono"
     ];
     sansSerif = [
       "Noto Sans CJK TC"
