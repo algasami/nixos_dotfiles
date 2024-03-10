@@ -14,6 +14,7 @@
     ./theme_global.nix
     ./fonts_global.nix
     ./audio_global.nix
+    ./game.nix
   ];
 
   

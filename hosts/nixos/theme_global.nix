@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
-  environment.variables.GTK_THEME = "Catppuccin-Latte-Standard-Pink-Dark";
-  environment.variables.XCURSOR_THEME = "Catppuccin-Latte-Pink";
+  environment.variables.GTK_THEME = "Catppuccin-Frappe-Standard-Pink-Dark";
+  environment.variables.XCURSOR_THEME = "Catppuccin-Frappe-Pink";
   environment.variables.XCURSOR_SIZE = "24";
   console = {
     earlySetup = true;
@@ -30,7 +30,7 @@
     catppuccin-gtk = pkgs.catppuccin-gtk.override {
       accents = [ "pink" ]; # You can specify multiple accents here to output multiple themes 
       size = "standard";
-      variant = "latte";
+      variant = "frappe";
     };
     # discord = pkgs.discord.override {
     #   withOpenASAR = true;
@@ -43,7 +43,7 @@
     colloid-icon-theme
     catppuccin-gtk
     catppuccin-kvantum
-    catppuccin-cursors.lattePink
+    catppuccin-cursors.frappeDark
 
     gnome.gnome-tweaks
     gnome.gnome-shell

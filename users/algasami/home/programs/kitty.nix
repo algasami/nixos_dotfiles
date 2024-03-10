@@ -5,6 +5,6 @@
     font.name = "Mononoki Nerd Font";
     font.size = 16;
     # font.package has already been taken care of (strict global font)
-    theme = "Catppuccin-Latte";
+    theme = "Catppuccin-Frappe";
   };
 }
