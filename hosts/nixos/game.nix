@@ -4,4 +4,8 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+  environment.systemPackages = [
+    pkgs.mangohud
+    pkgs.gamescope
+  ];
 }

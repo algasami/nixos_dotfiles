@@ -103,7 +103,7 @@
       "3,decorate:false,on-created-empty:easyeffect"
     ];
     exec-once = [
-      "sleep 5 && swww init & sleep 0.1 && swww img ${mysecrets}/wallpapers/market.gif"
+      "sleep 5 && swww init & sleep 2 && swww img ${mysecrets}/wallpapers/market.gif"
       "copyq --start-server"
       "wl-paste --type text --watch cliphist store"
       "eww open bar"
