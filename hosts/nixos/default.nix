@@ -7,7 +7,7 @@
 {
   imports =
   [ # Include the results of the hardware scan.
-    ./hardware-configuration-homepc.nix
+    ./hardware-configuration-homepc2.nix
 
     ./shells.nix
     ./portal.nix
